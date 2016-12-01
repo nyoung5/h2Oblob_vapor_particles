@@ -1,12 +1,12 @@
 ﻿<Properties StartupItem="Assembly-CSharp.csproj">
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Unity.Instance.Unity Editor" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/UI.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/GameControl.cs">
     <Files>
-      <File FileName="Assets/Scripts/PlantSunFlower.cs" Line="54" Column="5" />
-      <File FileName="Assets/Scripts/TalkToGrandpa.cs" Line="15" Column="29" />
-      <File FileName="Assets/Scripts/WaterPlace.cs" Line="35" Column="16" />
-      <File FileName="Assets/Scripts/VaporPlace.cs" Line="36" Column="16" />
+      <File FileName="Assets/Scripts/PlantSunFlower.cs" Line="132" Column="1" />
+      <File FileName="Assets/Scripts/TalkToGrandpa.cs" Line="1" Column="1" />
       <File FileName="Assets/Scripts/UI.cs" Line="46" Column="3" />
+      <File FileName="Assets/Scripts/GameControl.cs" Line="14" Column="20" />
+      <File FileName="Assets/Scripts/BlobPlayer.cs" Line="119" Column="34" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
