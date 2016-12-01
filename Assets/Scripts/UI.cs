@@ -30,7 +30,7 @@ public class UI : MonoBehaviour {
 		centerText = centerMessage.GetComponent<Text>();
 		isSkip = false;
 		isEnd = false;
-		
+
 	}
 	
 	// Update is called once per frame
@@ -43,6 +43,7 @@ public class UI : MonoBehaviour {
 		}
 	
 	}
+		
 
 	//setSkip is a method that sets the isSkip bool. If set to true,
 	//this will stop the cutscene

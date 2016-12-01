@@ -99,8 +99,10 @@
      <Compile Include="Assets\Scripts\ThirdPersonCamera.cs" />
      <Compile Include="Assets\Scripts\TownBlob.cs" />
      <Compile Include="Assets\Scripts\UI.cs" />
+     <Compile Include="Assets\Scripts\VaporPlace.cs" />
      <Compile Include="Assets\Scripts\WEll.cs" />
      <Compile Include="Assets\Scripts\Water.cs" />
+     <Compile Include="Assets\Scripts\WaterPlace.cs" />
      <None Include="Assets\AssetStoreAssets\NatureStarterKit2\Standard Assets\Effects\GlassRefraction\Shaders\GlassStainedBumpDistort.shader" />
      <None Include="Assets\AssetStoreAssets\NatureStarterKit2\Standard Assets\Effects\ImageEffects\Shaders\_BloomAndFlares\BlendOneOne.shader" />
      <None Include="Assets\AssetStoreAssets\NatureStarterKit2\Standard Assets\Effects\ImageEffects\Shaders\NoiseEffectShaderRGB.shader" />

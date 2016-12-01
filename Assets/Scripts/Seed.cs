@@ -42,7 +42,7 @@ public class Seed : MonoBehaviour {
 	
 		//add a seed to the seed counter in another script
 		PlantSunFlower seedScript = GameObject.Find ("ActualBlob").GetComponent<PlantSunFlower> ();
-		seedScript.GotASeed ();
+		seedScript.GotASeed (this.gameObject);
 
 	}
 		
