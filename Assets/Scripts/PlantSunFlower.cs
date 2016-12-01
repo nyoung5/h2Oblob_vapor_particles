@@ -23,6 +23,7 @@ public class PlantSunFlower : MonoBehaviour {
 
 	//constants
 	const float MIN_DIST = 5.0f;
+	const float GRAND_DIST = 20.0f;
 
 
 	// Use this for initialization
@@ -39,31 +40,43 @@ public class PlantSunFlower : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-	
+
 		//if the player is allowed to plant a seed, put it down in front of the player
 		if(Input.GetButtonDown("PlantSunFlower") && numSeeds>0)
 		{
-			//if a water place exists in the area, create a vapor place instead!
-			bool isVapor = false;
+
 			GameObject blob = GameObject.Find ("ActualBlob");
 
-			GameObject[] waterPlaces = GameObject.FindGameObjectsWithTag ("waterPlace");
-			for (var i = 0; i < waterPlaces.Length; i++) {
-				Vector3 waterPlacePos = waterPlaces [i].transform.position;
-				if (Vector3.Distance (transform.position, waterPlacePos) <= MIN_DIST) {
-					Destroy (waterPlaces [i]);
-					GameObject newPlace = Instantiate (vaporPlacePrefab) as GameObject;
-					Vector3 blobPosition = blob.transform.position + (blob.transform.forward*3);
-					newPlace.transform.position = blobPosition;
-					isVapor = true;
-				} 
-			}
-			if (!isVapor) {
-				GameObject newPlace = Instantiate (waterPlacePrefab) as GameObject;
-				Vector3 blobPosition = blob.transform.position + (blob.transform.forward*3);
-				newPlace.transform.position = blobPosition;
-			}
+			//don't allow them to plant a water/vapor place on grandblob... 
+			GameObject grandBlob = GameObject.Find ("grandpa");
+			if (Vector3.Distance (transform.position, grandBlob.transform.position) <= GRAND_DIST) {
 
+				GameObject seed = Instantiate (seedPrefab) as GameObject;
+				Vector3 blobPosition = blob.transform.position + (blob.transform.forward * 2);
+				seed.transform.position = blobPosition;
+
+			} else {
+				
+				//if a water place exists in the area, create a vapor place instead!
+				bool isVapor = false;
+
+				GameObject[] waterPlaces = GameObject.FindGameObjectsWithTag ("waterPlace");
+				for (var i = 0; i < waterPlaces.Length; i++) {
+					Vector3 waterPlacePos = waterPlaces [i].transform.position;
+					if (Vector3.Distance (transform.position, waterPlacePos) <= MIN_DIST) {
+						Destroy (waterPlaces [i]);
+						GameObject newPlace = Instantiate (vaporPlacePrefab) as GameObject;
+						Vector3 blobPosition = blob.transform.position + (blob.transform.forward * 3);
+						newPlace.transform.position = blobPosition;
+						isVapor = true;
+					} 
+				}
+				if (!isVapor) {
+					GameObject newPlace = Instantiate (waterPlacePrefab) as GameObject;
+					Vector3 blobPosition = blob.transform.position + (blob.transform.forward * 3);
+					newPlace.transform.position = blobPosition;
+				}
+			}
 
 			numSeeds--;
 
@@ -74,6 +87,7 @@ public class PlantSunFlower : MonoBehaviour {
 	//GotASeed is called when the player picks up a seed. It increments the amount of seeds
 	//they currently have. If it is the first collected seed, it plays instructions
 	public void GotASeed(GameObject aSeed){
+
 
 		if (aSeed.tag == "waterSeed") {
 			//destroy the things around the seed 

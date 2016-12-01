@@ -20,12 +20,14 @@ public class UI : MonoBehaviour {
 	//bool that is true if the user chose to skip the cutscene
 	private bool isSkip;
 	private bool isEnd;
+	private Vector3 playerSpawn;
 
 
 
 	// Use this for initialization - sets the center message game object
 	void Start () {
 
+		playerSpawn = GameObject.Find ("ActualBlob").transform.position;
 		centerMessage = GameObject.Find ("CenterMessage");
 		centerText = centerMessage.GetComponent<Text>();
 		isSkip = false;
@@ -38,12 +40,10 @@ public class UI : MonoBehaviour {
 
 		//if the key "c" is pressed, show the controls
 		if (Input.GetKeyDown ("c")) {
-			print ("Pressing c");
 			StartCoroutine (showControls (5));
-		}
+		} 
 	
 	}
-		
 
 	//setSkip is a method that sets the isSkip bool. If set to true,
 	//this will stop the cutscene
@@ -101,7 +101,7 @@ public class UI : MonoBehaviour {
 	public void YouDied(){
 
 		centerText.text = "...you... Died...";
-		Cursor.lockState = CursorLockMode.None;
+		Cursor.lockState = CursorLockMode.Locked;
 		Time.timeScale = 0;
 
 	}
@@ -144,12 +144,13 @@ public class UI : MonoBehaviour {
 
 		GameObject uiCanvas = GameObject.Find ("UICanvas");
 		Text uiText = uiCanvas.GetComponent<Text> ();
-		uiText.text = "~~~CONTROLS~~~ \n Use w, a, s, d to move and space to jump.\n" + 
-			"Use the mouse to change where you are looking. \n" +
-			"Press down on the mouse to use your ice abilities (no plants)\n" +
-			"Press the key 'q' to use your water powers (1 plant)\n" +
-			"Hold the key 'e' and jump to use your vapor powers (2 plants)\n" + 
-			"Press 'shift' to plant a plant.";
+		uiText.text = "~~~CONTROLS~~~ \n Use w, a, s, d to move and space to jump.\n" +
+		"Use the mouse to change where you are looking. \n" +
+		"Press down on the mouse to use your ice abilities (no plants)\n" +
+		"Press the key 'q' to use your water powers (1 plant)\n" +
+		"Hold the key 'e' and jump to use your vapor powers (2 plants)\n" +
+		"Press 'shift' to plant a plant.\n" +
+		"Press 'O' for the Oops! button.";
 		yield return new WaitForSeconds(aTime);
 		uiText.text = "Press 'c' to show controls";
 
