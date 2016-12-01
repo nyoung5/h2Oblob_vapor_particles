@@ -124,6 +124,7 @@
 'Assets/Scripts/BlobPlayer.cs'
 'Assets/Scripts/Blobrarian.cs'
 'Assets/Scripts/DoorOpen.cs'
+'Assets/Scripts/GameControl.cs'
 'Assets/Scripts/IceCircle.cs'
 'Assets/Scripts/MillBlade.cs'
 'Assets/Scripts/MovieCamera.cs'
