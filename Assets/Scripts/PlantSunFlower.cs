@@ -37,7 +37,7 @@ public class PlantSunFlower : MonoBehaviour {
 		temp = GameObject.Find ("Temperature").GetComponent<Temperature> ();
 
 	}
-	
+
 	// Update is called once per frame
 	void Update () {
 
@@ -56,7 +56,7 @@ public class PlantSunFlower : MonoBehaviour {
 				seed.transform.position = blobPosition;
 
 			} else {
-				
+
 				//if a water place exists in the area, create a vapor place instead!
 				bool isVapor = false;
 
