@@ -22,10 +22,12 @@ public class VaporPlace : MonoBehaviour {
 		GameObject actualBlob = GameObject.Find ("ActualBlob");
 		blobPlayer = actualBlob.GetComponent<BlobPlayer> ();
 		temp = GameObject.Find ("Temperature").GetComponent<Temperature> ();
+
 	}
 
 	// Update is called once per frame
 	void Update () {
+		
 
 	}
 

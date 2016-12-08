@@ -172,6 +172,11 @@ public class BlobPlayer : MonoBehaviour {
 		}
 	}
 
+	//@author Nathan Young NATHAN FIX
+	public void CreateJumpParticles(){
+		
+	}
+
 	//@author Elena Sparacio
 	//@author Patrick Lathan
 	class IceState : PowerState {
@@ -211,6 +216,7 @@ public class BlobPlayer : MonoBehaviour {
 				//Allow jumping in midair
 				if (Input.GetButtonDown("Jump")) {
 					player.ySpeed = JUMPSPEED;
+//NATHAN FIX					CreateJumpParticles ();
 				}
 			} else {
 				//Reset gravity to normal
